@@ -5,7 +5,7 @@ Heavily written of off from Simon Jürgensmeyer - @sj14 tutorial on https://blog
 A big shoutout to him for his tutorials
 ---
 Task left to do:
-<li>`Add current directory`</li>
+<li>```Add current directory```</li>
 <li>`Add machine's hostname`</li>
 <li>`Add current user`</li>
 ---
