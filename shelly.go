@@ -6,13 +6,22 @@ import (
 	"fmt"
 	"os"
 	"os/exec"
+	"os/user"
 	"strings"
 )
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
+	current_user, user_error := user.Current()
+	if user_error != nil {
+		os.Exit(0)
+	}
 	for {
-		fmt.Print("> ")
+		current_directory, directory_error := os.Getwd()
+		if directory_error != nil {
+			os.Exit(0)
+		}
+		fmt.Printf("(%s | %s) > ", current_user.Username, current_directory)
 		//Read the keyboard input.
 		input, err := reader.ReadString('\n')
 		if err != nil {
